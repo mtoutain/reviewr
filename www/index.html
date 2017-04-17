@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com http://griffis.edumedia.ca  'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content: griffis.edumedia.ca  placeholdit.imgix.net placehold.it ;"/>
+        <meta http-equiv="content-security-policy" content="default-src 'self' data: gap: http://*.edumedia.ca 'unsafe-inline' https://*.edumedia.ca 'unsafe-eval'" />
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="msapplication-tap-highlight" content="no"/>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+        
+        <!-- Include the compiled Ratchet CSS -->
+        <link href="css/ratchet.css" rel="stylesheet" />
+        <link href="css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <title>ReviewR</title>
+        
+    </head>
+    
+    <body>
+        <header class="bar bar-nav">
+            <a class="icon icon-compose pull-right" href="#addModal" id="addReviewButton">
+            </a>
+            <h1 class="title">REVIEWR</h1>
+        </header>
+       
+        <div class="content">
+            <!-- read through localStorage for contacts -->
+            <ul id = "reviewList" class="table-view">
+<!--
+              <li class="table-view-cell media">
+                <a href="#deleteModal" class="navigate-right">
+                   <canvas class="imgChart"></canvas>
+                    <img class="media-object pull-left" src="img/Sword_Kirby_Warrior.png">
+                  </a>
+                    <div class="media-body">
+                    <h4>Kirby</h4>
+                    <p>1 Giant Star</p>
+                    </div>
+              </li>
+-->
+            </ul>
+        </div>
+<!-------------------------------------------------
+                      ADD MODAL      
+-------------------------------------------------->
+       
+        <div id="addModal" class="modal">
+            <header class="bar bar-nav">
+                <a id="cancelButton" class="icon icon-close pull-right" href="#addModal"></a>
+                <h1 class="title">Thing To Rate</h1>
+            </header>
+
+            <div class="content">
+                <div class="content-padded">
+                    <form class="input-group">
+                        <div class="input-row">
+                            <label>Item</label>
+                            <input id="itemName"type="text" placeholder="Something To Judge"/>
+                        </div>
+                        
+                        <div id="theFirstStars"class="stars hidden">
+                 <img id="imgHolder" class="img1 hidden"src="" alt="">
+    <input class="star star-5" id="star-5" type="radio" name="star" value = 5 /><label class="star star-5" for="star-5"></label>
+    <input class="star star-4" id="star-4" type="radio" name="star" value = 4 /><label class="star star-4" for="star-4"></label>
+    <input class="star star-3" id="star-3" type="radio" name="star" value = 3 /><label class="star star-3" for="star-3"></label>
+    <input class="star star-2" id="star-2" type="radio" name="star" value = 2 /><label class="star star-2" for="star-2"></label>
+    <input class="star star-1" id="star-1" type="radio" name="star" value = 1 /><label class="star star-1" for="star-1"></label>
+  
+            </div>
+                        
+                    </form>
+                    <p id="addModalButtons"class="content-padded">
+                       
+                        <button id="pictureButton" class="btn btn-positive btn-block">
+                            <i class="fa fa-camera" aria-hidden="true"></i> Take Picture
+                        </button>
+                        <button id ="cancelButton2" class="btn btn-block">
+                            <span class="icon icon-check"></span>
+                            Cancel  
+                        </button>
+                        <button id ="saveButton" class="btn btn-primary btn-block">
+                            Save
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+<!-------------------------------------------------
+                   DELETE MODAL      
+-------------------------------------------------->       
+        <div id="deleteModal" class="modal">
+            <header class="bar bar-nav">
+                <a id="cancelBtn1" class="icon icon-close pull-right" href="#deleteModal"></a>
+                <h1 class="title">View/Delete</h1>
+            </header>
+
+            <div class="content">
+                <div class="content-padded">
+                        <div class="media-body">
+                            <img id="imgToDelete" class="img2" src="" alt="">
+                        </div>
+                        
+            <div class="starForm2">
+ 
+    <input class="star star-5" id="star-5" type="radio" name="starList2" value = 5 /><label class="star star-5" for="star-5"></label>
+    <input class="star star-4" id="star-4" type="radio" name="starList2" value = 4 /><label class="star star-4" for="star-4"></label>
+    <input class="star star-3" id="star-3" type="radio" name="starList2" value = 3 /><label class="star star-3" for="star-3"></label>
+    <input class="star star-2" id="star-2" type="radio" name="starList2" value = 2 /><label class="star star-2" for="star-2"></label>
+    <input class="star star-1" id="star-1" type="radio" name="starList2" value = 1 /><label class="star star-1" for="star-1"></label>
+  
+            </div>
+                        
+                    
+                    <p class="content-padded">
+                        <button id ="deleteButton" class="btn btn-negative btn-block">
+                            Delete
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <!-- include the compiled Ratchet JS -->
+        <script src="js/ratchet.js"></script>
+        <script src="js/moment.js"></script>
+        
+        <script src="js/app.js"></script>
+    </body>
+</html>
